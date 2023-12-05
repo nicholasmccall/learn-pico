@@ -2,13 +2,6 @@ from machine import Pin
 from time import sleep
 from random import randint
 
-def get_random_number() -> int:
-    """
-    Returns a random number between zero and 15
-    """
-    random_number = randint(0, 15)
-    return random_number
-
 def calculate_binary_state(number: int, ones_pin: Pin, twos_pin: Pin, fours_pin: Pin, eights_pin: Pin) -> None:
     """
     Given a number 0-15 and four Pins, toggles the indicator pins
@@ -56,7 +49,7 @@ def main_routine():
     while True:
 
         # Get a random number between 0 and 15
-        random_number = get_random_number()
+        random_number = randint(0, 15)
 
         # Let the user know what number we are representing with our LEDs
         print("New random number selected: " + str(random_number))
